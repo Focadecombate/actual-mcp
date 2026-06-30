@@ -33,6 +33,12 @@ import * as createTransaction from './create-transaction/index.js';
 import * as importTransactions from './import-transactions/index.js';
 import * as makeTransfer from './make-transfer/index.js';
 import * as runBankSync from './run-bank-sync/index.js';
+import * as getBudgetMonths from './budgets/get-budget-months/index.js';
+import * as getBudgetMonth from './budgets/get-budget-month/index.js';
+import * as setBudgetAmount from './budgets/set-budget-amount/index.js';
+import * as setBudgetCarryover from './budgets/set-budget-carryover/index.js';
+import * as holdBudgetForNextMonth from './budgets/hold-budget-for-next-month/index.js';
+import * as resetBudgetHold from './budgets/reset-budget-hold/index.js';
 
 const readTools = [
   getTransactions,
@@ -43,6 +49,8 @@ const readTools = [
   getGroupedCategories,
   getPayees,
   getRules,
+  getBudgetMonths,
+  getBudgetMonth,
 ];
 
 const writeTools = [
@@ -64,6 +72,10 @@ const writeTools = [
   importTransactions,
   makeTransfer,
   runBankSync,
+  setBudgetAmount,
+  setBudgetCarryover,
+  holdBudgetForNextMonth,
+  resetBudgetHold,
 ];
 
 export const setupTools = (server: Server, enableWrite: boolean): void => {
